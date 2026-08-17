@@ -13,7 +13,21 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteRouteImport } from './routes/admin/route'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ParentRouteRouteImport } from './routes/parent/route'
+import { Route as AdminClassesRouteImport } from './routes/admin/classes'
 import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as AdminEvaluationsRouteImport } from './routes/admin/evaluations'
+import { Route as AdminExpensesRouteImport } from './routes/admin/expenses'
+import { Route as AdminLevelsRouteImport } from './routes/admin/levels'
+import { Route as AdminParentsRouteImport } from './routes/admin/parents'
+import { Route as AdminPaymentsRouteImport } from './routes/admin/payments'
+import { Route as AdminReportCardsRouteImport } from './routes/admin/report-cards'
+import { Route as AdminSalariesRouteImport } from './routes/admin/salaries'
+import { Route as AdminStaffRouteImport } from './routes/admin/staff'
+import { Route as AdminStudentsRouteImport } from './routes/admin/students'
+import { Route as AdminSubjectsRouteImport } from './routes/admin/subjects'
+import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
+import { Route as AdminUnpaidStudentsRouteImport } from './routes/admin/unpaid-students'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,9 +49,79 @@ const ParentRouteRoute = ParentRouteRouteImport.update({
   path: '/parent',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminClassesRoute = AdminClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminEvaluationsRoute = AdminEvaluationsRouteImport.update({
+  id: '/evaluations',
+  path: '/evaluations',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminExpensesRoute = AdminExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminLevelsRoute = AdminLevelsRouteImport.update({
+  id: '/levels',
+  path: '/levels',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminParentsRoute = AdminParentsRouteImport.update({
+  id: '/parents',
+  path: '/parents',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminReportCardsRoute = AdminReportCardsRouteImport.update({
+  id: '/report-cards',
+  path: '/report-cards',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSalariesRoute = AdminSalariesRouteImport.update({
+  id: '/salaries',
+  path: '/salaries',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStaffRoute = AdminStaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStudentsRoute = AdminStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSubjectsRoute = AdminSubjectsRouteImport.update({
+  id: '/subjects',
+  path: '/subjects',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminTeachersRoute = AdminTeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUnpaidStudentsRoute = AdminUnpaidStudentsRouteImport.update({
+  id: '/unpaid-students',
+  path: '/unpaid-students',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
   getParentRoute: () => AdminRouteRoute,
 } as any)
 
@@ -46,14 +130,42 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRouteRouteWithChildren
   '/parent': typeof ParentRouteRoute
   '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteRouteWithChildren
   '/parent': typeof ParentRouteRoute
   '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,14 +173,86 @@ export interface FileRoutesById {
   '/admin': typeof AdminRouteRouteWithChildren
   '/parent': typeof ParentRouteRoute
   '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/parent' | '/login' | '/admin/dashboard'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/parents'
+    | '/admin/payments'
+    | '/admin/report-cards'
+    | '/admin/salaries'
+    | '/admin/staff'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/parent' | '/login' | '/admin/dashboard'
-  id: '__root__' | '/' | '/admin' | '/parent' | '/login' | '/admin/dashboard'
+  to:
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/parents'
+    | '/admin/payments'
+    | '/admin/report-cards'
+    | '/admin/salaries'
+    | '/admin/staff'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/parents'
+    | '/admin/payments'
+    | '/admin/report-cards'
+    | '/admin/salaries'
+    | '/admin/staff'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -108,6 +292,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParentRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/classes': {
+      id: '/admin/classes'
+      path: '/classes'
+      fullPath: '/admin/classes'
+      preLoaderRoute: typeof AdminClassesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
       path: '/dashboard'
@@ -115,15 +306,134 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/admin/evaluations': {
+      id: '/admin/evaluations'
+      path: '/evaluations'
+      fullPath: '/admin/evaluations'
+      preLoaderRoute: typeof AdminEvaluationsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/expenses': {
+      id: '/admin/expenses'
+      path: '/expenses'
+      fullPath: '/admin/expenses'
+      preLoaderRoute: typeof AdminExpensesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/levels': {
+      id: '/admin/levels'
+      path: '/levels'
+      fullPath: '/admin/levels'
+      preLoaderRoute: typeof AdminLevelsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/parents': {
+      id: '/admin/parents'
+      path: '/parents'
+      fullPath: '/admin/parents'
+      preLoaderRoute: typeof AdminParentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/report-cards': {
+      id: '/admin/report-cards'
+      path: '/report-cards'
+      fullPath: '/admin/report-cards'
+      preLoaderRoute: typeof AdminReportCardsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/salaries': {
+      id: '/admin/salaries'
+      path: '/salaries'
+      fullPath: '/admin/salaries'
+      preLoaderRoute: typeof AdminSalariesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/staff': {
+      id: '/admin/staff'
+      path: '/staff'
+      fullPath: '/admin/staff'
+      preLoaderRoute: typeof AdminStaffRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/students': {
+      id: '/admin/students'
+      path: '/students'
+      fullPath: '/admin/students'
+      preLoaderRoute: typeof AdminStudentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/subjects': {
+      id: '/admin/subjects'
+      path: '/subjects'
+      fullPath: '/admin/subjects'
+      preLoaderRoute: typeof AdminSubjectsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/teachers': {
+      id: '/admin/teachers'
+      path: '/teachers'
+      fullPath: '/admin/teachers'
+      preLoaderRoute: typeof AdminTeachersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/unpaid-students': {
+      id: '/admin/unpaid-students'
+      path: '/unpaid-students'
+      fullPath: '/admin/unpaid-students'
+      preLoaderRoute: typeof AdminUnpaidStudentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
   }
 }
 
 interface AdminRouteRouteChildren {
+  AdminClassesRoute: typeof AdminClassesRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminEvaluationsRoute: typeof AdminEvaluationsRoute
+  AdminExpensesRoute: typeof AdminExpensesRoute
+  AdminLevelsRoute: typeof AdminLevelsRoute
+  AdminParentsRoute: typeof AdminParentsRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminReportCardsRoute: typeof AdminReportCardsRoute
+  AdminSalariesRoute: typeof AdminSalariesRoute
+  AdminStaffRoute: typeof AdminStaffRoute
+  AdminStudentsRoute: typeof AdminStudentsRoute
+  AdminSubjectsRoute: typeof AdminSubjectsRoute
+  AdminTeachersRoute: typeof AdminTeachersRoute
+  AdminUnpaidStudentsRoute: typeof AdminUnpaidStudentsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
 }
 
 const AdminRouteRouteChildren: AdminRouteRouteChildren = {
+  AdminClassesRoute: AdminClassesRoute,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminEvaluationsRoute: AdminEvaluationsRoute,
+  AdminExpensesRoute: AdminExpensesRoute,
+  AdminLevelsRoute: AdminLevelsRoute,
+  AdminParentsRoute: AdminParentsRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminReportCardsRoute: AdminReportCardsRoute,
+  AdminSalariesRoute: AdminSalariesRoute,
+  AdminStaffRoute: AdminStaffRoute,
+  AdminStudentsRoute: AdminStudentsRoute,
+  AdminSubjectsRoute: AdminSubjectsRoute,
+  AdminTeachersRoute: AdminTeachersRoute,
+  AdminUnpaidStudentsRoute: AdminUnpaidStudentsRoute,
+  AdminUsersRoute: AdminUsersRoute,
 }
 
 const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
