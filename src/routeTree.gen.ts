@@ -18,11 +18,18 @@ import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
 import { Route as AdminEvaluationsRouteImport } from './routes/admin/evaluations'
 import { Route as AdminExpensesRouteImport } from './routes/admin/expenses'
 import { Route as AdminLevelsRouteImport } from './routes/admin/levels'
+import { Route as AdminNotificationsRouteImport } from './routes/admin/notifications'
 import { Route as AdminParentsRouteImport } from './routes/admin/parents'
+import { Route as AdminPaymentRemindersRouteImport } from './routes/admin/payment-reminders'
 import { Route as AdminPaymentsRouteImport } from './routes/admin/payments'
+import { Route as AdminProfileRouteImport } from './routes/admin/profile'
 import { Route as AdminReportCardsRouteImport } from './routes/admin/report-cards'
+import { Route as AdminReportsRouteImport } from './routes/admin/reports'
 import { Route as AdminSalariesRouteImport } from './routes/admin/salaries'
+import { Route as AdminSchoolYearRouteImport } from './routes/admin/school-year'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
 import { Route as AdminStaffRouteImport } from './routes/admin/staff'
+import { Route as AdminStatisticsRouteImport } from './routes/admin/statistics'
 import { Route as AdminStudentsRouteImport } from './routes/admin/students'
 import { Route as AdminSubjectsRouteImport } from './routes/admin/subjects'
 import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
@@ -74,9 +81,19 @@ const AdminLevelsRoute = AdminLevelsRouteImport.update({
   path: '/levels',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
 const AdminParentsRoute = AdminParentsRouteImport.update({
   id: '/parents',
   path: '/parents',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminPaymentRemindersRoute = AdminPaymentRemindersRouteImport.update({
+  id: '/payment-reminders',
+  path: '/payment-reminders',
   getParentRoute: () => AdminRouteRoute,
 } as any)
 const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
@@ -84,9 +101,19 @@ const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
   path: '/payments',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const AdminProfileRoute = AdminProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
 const AdminReportCardsRoute = AdminReportCardsRouteImport.update({
   id: '/report-cards',
   path: '/report-cards',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
   getParentRoute: () => AdminRouteRoute,
 } as any)
 const AdminSalariesRoute = AdminSalariesRouteImport.update({
@@ -94,9 +121,24 @@ const AdminSalariesRoute = AdminSalariesRouteImport.update({
   path: '/salaries',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const AdminSchoolYearRoute = AdminSchoolYearRouteImport.update({
+  id: '/school-year',
+  path: '/school-year',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
 const AdminStaffRoute = AdminStaffRouteImport.update({
   id: '/staff',
   path: '/staff',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStatisticsRoute = AdminStatisticsRouteImport.update({
+  id: '/statistics',
+  path: '/statistics',
   getParentRoute: () => AdminRouteRoute,
 } as any)
 const AdminStudentsRoute = AdminStudentsRouteImport.update({
@@ -135,11 +177,18 @@ export interface FileRoutesByFullPath {
   '/admin/evaluations': typeof AdminEvaluationsRoute
   '/admin/expenses': typeof AdminExpensesRoute
   '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
   '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
   '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
   '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/students': typeof AdminStudentsRoute
   '/admin/subjects': typeof AdminSubjectsRoute
   '/admin/teachers': typeof AdminTeachersRoute
@@ -156,11 +205,18 @@ export interface FileRoutesByTo {
   '/admin/evaluations': typeof AdminEvaluationsRoute
   '/admin/expenses': typeof AdminExpensesRoute
   '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
   '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
   '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
   '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/students': typeof AdminStudentsRoute
   '/admin/subjects': typeof AdminSubjectsRoute
   '/admin/teachers': typeof AdminTeachersRoute
@@ -178,11 +234,18 @@ export interface FileRoutesById {
   '/admin/evaluations': typeof AdminEvaluationsRoute
   '/admin/expenses': typeof AdminExpensesRoute
   '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
   '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
   '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
   '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
   '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/students': typeof AdminStudentsRoute
   '/admin/subjects': typeof AdminSubjectsRoute
   '/admin/teachers': typeof AdminTeachersRoute
@@ -201,11 +264,18 @@ export interface FileRouteTypes {
     | '/admin/evaluations'
     | '/admin/expenses'
     | '/admin/levels'
+    | '/admin/notifications'
     | '/admin/parents'
+    | '/admin/payment-reminders'
     | '/admin/payments'
+    | '/admin/profile'
     | '/admin/report-cards'
+    | '/admin/reports'
     | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
     | '/admin/staff'
+    | '/admin/statistics'
     | '/admin/students'
     | '/admin/subjects'
     | '/admin/teachers'
@@ -222,11 +292,18 @@ export interface FileRouteTypes {
     | '/admin/evaluations'
     | '/admin/expenses'
     | '/admin/levels'
+    | '/admin/notifications'
     | '/admin/parents'
+    | '/admin/payment-reminders'
     | '/admin/payments'
+    | '/admin/profile'
     | '/admin/report-cards'
+    | '/admin/reports'
     | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
     | '/admin/staff'
+    | '/admin/statistics'
     | '/admin/students'
     | '/admin/subjects'
     | '/admin/teachers'
@@ -243,11 +320,18 @@ export interface FileRouteTypes {
     | '/admin/evaluations'
     | '/admin/expenses'
     | '/admin/levels'
+    | '/admin/notifications'
     | '/admin/parents'
+    | '/admin/payment-reminders'
     | '/admin/payments'
+    | '/admin/profile'
     | '/admin/report-cards'
+    | '/admin/reports'
     | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
     | '/admin/staff'
+    | '/admin/statistics'
     | '/admin/students'
     | '/admin/subjects'
     | '/admin/teachers'
@@ -327,11 +411,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminLevelsRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/admin/notifications': {
+      id: '/admin/notifications'
+      path: '/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
     '/admin/parents': {
       id: '/admin/parents'
       path: '/parents'
       fullPath: '/admin/parents'
       preLoaderRoute: typeof AdminParentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/payment-reminders': {
+      id: '/admin/payment-reminders'
+      path: '/payment-reminders'
+      fullPath: '/admin/payment-reminders'
+      preLoaderRoute: typeof AdminPaymentRemindersRouteImport
       parentRoute: typeof AdminRouteRoute
     }
     '/admin/payments': {
@@ -341,11 +439,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPaymentsRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/admin/profile': {
+      id: '/admin/profile'
+      path: '/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AdminProfileRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
     '/admin/report-cards': {
       id: '/admin/report-cards'
       path: '/report-cards'
       fullPath: '/admin/report-cards'
       preLoaderRoute: typeof AdminReportCardsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
       parentRoute: typeof AdminRouteRoute
     }
     '/admin/salaries': {
@@ -355,11 +467,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSalariesRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/admin/school-year': {
+      id: '/admin/school-year'
+      path: '/school-year'
+      fullPath: '/admin/school-year'
+      preLoaderRoute: typeof AdminSchoolYearRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
     '/admin/staff': {
       id: '/admin/staff'
       path: '/staff'
       fullPath: '/admin/staff'
       preLoaderRoute: typeof AdminStaffRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/statistics': {
+      id: '/admin/statistics'
+      path: '/statistics'
+      fullPath: '/admin/statistics'
+      preLoaderRoute: typeof AdminStatisticsRouteImport
       parentRoute: typeof AdminRouteRoute
     }
     '/admin/students': {
@@ -406,11 +539,18 @@ interface AdminRouteRouteChildren {
   AdminEvaluationsRoute: typeof AdminEvaluationsRoute
   AdminExpensesRoute: typeof AdminExpensesRoute
   AdminLevelsRoute: typeof AdminLevelsRoute
+  AdminNotificationsRoute: typeof AdminNotificationsRoute
   AdminParentsRoute: typeof AdminParentsRoute
+  AdminPaymentRemindersRoute: typeof AdminPaymentRemindersRoute
   AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminProfileRoute: typeof AdminProfileRoute
   AdminReportCardsRoute: typeof AdminReportCardsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
   AdminSalariesRoute: typeof AdminSalariesRoute
+  AdminSchoolYearRoute: typeof AdminSchoolYearRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
   AdminStaffRoute: typeof AdminStaffRoute
+  AdminStatisticsRoute: typeof AdminStatisticsRoute
   AdminStudentsRoute: typeof AdminStudentsRoute
   AdminSubjectsRoute: typeof AdminSubjectsRoute
   AdminTeachersRoute: typeof AdminTeachersRoute
@@ -424,11 +564,18 @@ const AdminRouteRouteChildren: AdminRouteRouteChildren = {
   AdminEvaluationsRoute: AdminEvaluationsRoute,
   AdminExpensesRoute: AdminExpensesRoute,
   AdminLevelsRoute: AdminLevelsRoute,
+  AdminNotificationsRoute: AdminNotificationsRoute,
   AdminParentsRoute: AdminParentsRoute,
+  AdminPaymentRemindersRoute: AdminPaymentRemindersRoute,
   AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminProfileRoute: AdminProfileRoute,
   AdminReportCardsRoute: AdminReportCardsRoute,
+  AdminReportsRoute: AdminReportsRoute,
   AdminSalariesRoute: AdminSalariesRoute,
+  AdminSchoolYearRoute: AdminSchoolYearRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
   AdminStaffRoute: AdminStaffRoute,
+  AdminStatisticsRoute: AdminStatisticsRoute,
   AdminStudentsRoute: AdminStudentsRoute,
   AdminSubjectsRoute: AdminSubjectsRoute,
   AdminTeachersRoute: AdminTeachersRoute,
