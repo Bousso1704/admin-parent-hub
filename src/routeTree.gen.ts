@@ -35,6 +35,7 @@ import { Route as AdminSubjectsRouteImport } from './routes/admin/subjects'
 import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
 import { Route as AdminUnpaidStudentsRouteImport } from './routes/admin/unpaid-students'
 import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as ParentDashboardRouteImport } from './routes/parent/dashboard'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -166,11 +167,16 @@ const AdminUsersRoute = AdminUsersRouteImport.update({
   path: '/users',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const ParentDashboardRoute = ParentDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteRouteWithChildren
-  '/parent': typeof ParentRouteRoute
+  '/parent': typeof ParentRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -194,11 +200,12 @@ export interface FileRoutesByFullPath {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteRouteWithChildren
-  '/parent': typeof ParentRouteRoute
+  '/parent': typeof ParentRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -222,12 +229,13 @@ export interface FileRoutesByTo {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRouteRouteWithChildren
-  '/parent': typeof ParentRouteRoute
+  '/parent': typeof ParentRouteRouteWithChildren
   '/login': typeof LoginRoute
   '/admin/classes': typeof AdminClassesRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -251,6 +259,7 @@ export interface FileRoutesById {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/dashboard'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -309,6 +319,7 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/dashboard'
   id:
     | '__root__'
     | '/'
@@ -337,12 +348,13 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/dashboard'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRouteRoute: typeof AdminRouteRouteWithChildren
-  ParentRouteRoute: typeof ParentRouteRoute
+  ParentRouteRoute: typeof ParentRouteRouteWithChildren
   LoginRoute: typeof LoginRoute
 }
 
@@ -530,6 +542,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminUsersRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/parent/dashboard': {
+      id: '/parent/dashboard'
+      path: '/dashboard'
+      fullPath: '/parent/dashboard'
+      preLoaderRoute: typeof ParentDashboardRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
   }
 }
 
@@ -587,10 +606,22 @@ const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
   AdminRouteRouteChildren,
 )
 
+interface ParentRouteRouteChildren {
+  ParentDashboardRoute: typeof ParentDashboardRoute
+}
+
+const ParentRouteRouteChildren: ParentRouteRouteChildren = {
+  ParentDashboardRoute: ParentDashboardRoute,
+}
+
+const ParentRouteRouteWithChildren = ParentRouteRoute._addFileChildren(
+  ParentRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRouteRoute: AdminRouteRouteWithChildren,
-  ParentRouteRoute: ParentRouteRoute,
+  ParentRouteRoute: ParentRouteRouteWithChildren,
   LoginRoute: LoginRoute,
 }
 export const routeTree = rootRouteImport
