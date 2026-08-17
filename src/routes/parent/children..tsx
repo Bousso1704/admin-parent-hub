@@ -4,7 +4,7 @@ import { metaFor } from "@/components/app/admin-page";
 import { StatusBadge } from "@/components/app/stat-card";
 import { children } from "@/lib/mock-data";
 
-export const Route = createFileRoute("/parent/children/$id")({
+export const Route = createFileRoute("/parent/children/")({
   head: () => metaFor("Profil de l'enfant", "Fiche détaillée de votre enfant : identité, classe, programme et enseignant."),
   component: ChildProfile,
 });
