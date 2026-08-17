@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 export function useChild(): Child {
   const { childId } = useAuth();
-  return children.find((c) => c.id === childId) ?? children[0];
+  return children.find((c) => c.id === childId) ?? children[0]!;
 }
 
 export function ChildSelector() {

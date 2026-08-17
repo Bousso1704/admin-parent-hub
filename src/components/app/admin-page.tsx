@@ -17,12 +17,12 @@ export function AdminListPage<T extends Record<string, unknown>>({
   withActions = true,
 }: {
   title: string;
-  subtitle?: string;
+  subtitle?: string | undefined;
   columns: string[];
   rows: T[];
   cells: (row: T) => ReactNode[];
   addLabel?: string;
-  summary?: ReactNode;
+  summary?: ReactNode | undefined;
   withActions?: boolean;
 }) {
   const [q, setQ] = useState("");
