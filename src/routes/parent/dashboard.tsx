@@ -15,6 +15,7 @@ export const Route = createFileRoute("/parent/dashboard")({
 function ParentDashboard() {
   const child = useChild();
   const dettes = children.filter((c) => c.solde > 0);
+  const dette = dettes[0];
 
   return (
     <>
@@ -24,15 +25,15 @@ function ParentDashboard() {
         actions={<ChildSelector />}
       />
 
-      {dettes.length > 0 && (
+      {dette && (
         <div className="mb-6 rounded-2xl border border-warning/40 bg-warning/12 p-5">
           <div className="flex flex-wrap items-start gap-3">
             <AlertTriangle className="mt-0.5 h-5 w-5 text-warning-foreground" />
             <div className="min-w-0 flex-1">
               <p className="font-display text-lg font-semibold">⚠️ Paiement en attente</p>
               <p className="mt-1 text-sm">
-                Il reste <strong>{fcfa(dettes[0].solde)}</strong> à régler pour la scolarité de{" "}
-                {dettes[0].prenom} {dettes[0].nom}.
+                Il reste <strong>{fcfa(dette.solde)}</strong> à régler pour la scolarité de{" "}
+                {dette.prenom} {dette.nom}.
               </p>
               <p className="text-sm text-muted-foreground">Date limite : 30 septembre 2026</p>
             </div>

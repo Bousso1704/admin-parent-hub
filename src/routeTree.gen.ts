@@ -51,6 +51,7 @@ import { Route as ParentReportCardsRouteImport } from './routes/parent/report-ca
 import { Route as ParentScheduleRouteImport } from './routes/parent/schedule'
 import { Route as ParentSettingsRouteImport } from './routes/parent/settings'
 import { Route as ParentChildrenIndexRouteImport } from './routes/parent/children.index'
+import { Route as ParentChildrenIdRouteImport } from './routes/parent/children.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -262,6 +263,11 @@ const ParentChildrenIndexRoute = ParentChildrenIndexRouteImport.update({
   path: '/children/',
   getParentRoute: () => ParentRouteRoute,
 } as any)
+const ParentChildrenIdRoute = ParentChildrenIdRouteImport.update({
+  id: '/children/$id',
+  path: '/children/$id',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -305,6 +311,7 @@ export interface FileRoutesByFullPath {
   '/parent/report-cards': typeof ParentReportCardsRoute
   '/parent/schedule': typeof ParentScheduleRoute
   '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
   '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesByTo {
@@ -349,6 +356,7 @@ export interface FileRoutesByTo {
   '/parent/report-cards': typeof ParentReportCardsRoute
   '/parent/schedule': typeof ParentScheduleRoute
   '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
   '/parent/children': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesById {
@@ -394,6 +402,7 @@ export interface FileRoutesById {
   '/parent/report-cards': typeof ParentReportCardsRoute
   '/parent/schedule': typeof ParentScheduleRoute
   '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
   '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRouteTypes {
@@ -440,6 +449,7 @@ export interface FileRouteTypes {
     | '/parent/report-cards'
     | '/parent/schedule'
     | '/parent/settings'
+    | '/parent/children/$id'
     | '/parent/children/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -484,6 +494,7 @@ export interface FileRouteTypes {
     | '/parent/report-cards'
     | '/parent/schedule'
     | '/parent/settings'
+    | '/parent/children/$id'
     | '/parent/children'
   id:
     | '__root__'
@@ -528,6 +539,7 @@ export interface FileRouteTypes {
     | '/parent/report-cards'
     | '/parent/schedule'
     | '/parent/settings'
+    | '/parent/children/$id'
     | '/parent/children/'
   fileRoutesById: FileRoutesById
 }
@@ -834,6 +846,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParentChildrenIndexRouteImport
       parentRoute: typeof ParentRouteRoute
     }
+    '/parent/children/$id': {
+      id: '/parent/children/$id'
+      path: '/children/$id'
+      fullPath: '/parent/children/$id'
+      preLoaderRoute: typeof ParentChildrenIdRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
   }
 }
 
@@ -907,6 +926,7 @@ interface ParentRouteRouteChildren {
   ParentReportCardsRoute: typeof ParentReportCardsRoute
   ParentScheduleRoute: typeof ParentScheduleRoute
   ParentSettingsRoute: typeof ParentSettingsRoute
+  ParentChildrenIdRoute: typeof ParentChildrenIdRoute
   ParentChildrenIndexRoute: typeof ParentChildrenIndexRoute
 }
 
@@ -926,6 +946,7 @@ const ParentRouteRouteChildren: ParentRouteRouteChildren = {
   ParentReportCardsRoute: ParentReportCardsRoute,
   ParentScheduleRoute: ParentScheduleRoute,
   ParentSettingsRoute: ParentSettingsRoute,
+  ParentChildrenIdRoute: ParentChildrenIdRoute,
   ParentChildrenIndexRoute: ParentChildrenIndexRoute,
 }
 
