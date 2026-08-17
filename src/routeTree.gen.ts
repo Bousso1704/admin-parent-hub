@@ -35,7 +35,22 @@ import { Route as AdminSubjectsRouteImport } from './routes/admin/subjects'
 import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
 import { Route as AdminUnpaidStudentsRouteImport } from './routes/admin/unpaid-students'
 import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as ParentAnnouncementsRouteImport } from './routes/parent/announcements'
+import { Route as ParentAttendanceRouteImport } from './routes/parent/attendance'
+import { Route as ParentBalanceRouteImport } from './routes/parent/balance'
+import { Route as ParentChildProfileRouteImport } from './routes/parent/child-profile'
+import { Route as ParentClassRouteImport } from './routes/parent/class'
 import { Route as ParentDashboardRouteImport } from './routes/parent/dashboard'
+import { Route as ParentFeesRouteImport } from './routes/parent/fees'
+import { Route as ParentGradesRouteImport } from './routes/parent/grades'
+import { Route as ParentNotificationsRouteImport } from './routes/parent/notifications'
+import { Route as ParentPaymentHistoryRouteImport } from './routes/parent/payment-history'
+import { Route as ParentPaymentsRouteImport } from './routes/parent/payments'
+import { Route as ParentProfileRouteImport } from './routes/parent/profile'
+import { Route as ParentReportCardsRouteImport } from './routes/parent/report-cards'
+import { Route as ParentScheduleRouteImport } from './routes/parent/schedule'
+import { Route as ParentSettingsRouteImport } from './routes/parent/settings'
+import { Route as ParentChildrenIndexRouteImport } from './routes/parent/children.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -167,9 +182,84 @@ const AdminUsersRoute = AdminUsersRouteImport.update({
   path: '/users',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const ParentAnnouncementsRoute = ParentAnnouncementsRouteImport.update({
+  id: '/announcements',
+  path: '/announcements',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentAttendanceRoute = ParentAttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentBalanceRoute = ParentBalanceRouteImport.update({
+  id: '/balance',
+  path: '/balance',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentChildProfileRoute = ParentChildProfileRouteImport.update({
+  id: '/child-profile',
+  path: '/child-profile',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentClassRoute = ParentClassRouteImport.update({
+  id: '/class',
+  path: '/class',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
 const ParentDashboardRoute = ParentDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentFeesRoute = ParentFeesRouteImport.update({
+  id: '/fees',
+  path: '/fees',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentGradesRoute = ParentGradesRouteImport.update({
+  id: '/grades',
+  path: '/grades',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentNotificationsRoute = ParentNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentPaymentHistoryRoute = ParentPaymentHistoryRouteImport.update({
+  id: '/payment-history',
+  path: '/payment-history',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentPaymentsRoute = ParentPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentProfileRoute = ParentProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentReportCardsRoute = ParentReportCardsRouteImport.update({
+  id: '/report-cards',
+  path: '/report-cards',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentScheduleRoute = ParentScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentSettingsRoute = ParentSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentChildrenIndexRoute = ParentChildrenIndexRouteImport.update({
+  id: '/children/',
+  path: '/children/',
   getParentRoute: () => ParentRouteRoute,
 } as any)
 
@@ -200,7 +290,22 @@ export interface FileRoutesByFullPath {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
   '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -229,7 +334,22 @@ export interface FileRoutesByTo {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
   '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -259,7 +379,22 @@ export interface FileRoutesById {
   '/admin/teachers': typeof AdminTeachersRoute
   '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
   '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -290,7 +425,22 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
     | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -319,7 +469,22 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
     | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children'
   id:
     | '__root__'
     | '/'
@@ -348,7 +513,22 @@ export interface FileRouteTypes {
     | '/admin/teachers'
     | '/admin/unpaid-students'
     | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
     | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -542,11 +722,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminUsersRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/parent/announcements': {
+      id: '/parent/announcements'
+      path: '/announcements'
+      fullPath: '/parent/announcements'
+      preLoaderRoute: typeof ParentAnnouncementsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/attendance': {
+      id: '/parent/attendance'
+      path: '/attendance'
+      fullPath: '/parent/attendance'
+      preLoaderRoute: typeof ParentAttendanceRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/balance': {
+      id: '/parent/balance'
+      path: '/balance'
+      fullPath: '/parent/balance'
+      preLoaderRoute: typeof ParentBalanceRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/child-profile': {
+      id: '/parent/child-profile'
+      path: '/child-profile'
+      fullPath: '/parent/child-profile'
+      preLoaderRoute: typeof ParentChildProfileRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/class': {
+      id: '/parent/class'
+      path: '/class'
+      fullPath: '/parent/class'
+      preLoaderRoute: typeof ParentClassRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
     '/parent/dashboard': {
       id: '/parent/dashboard'
       path: '/dashboard'
       fullPath: '/parent/dashboard'
       preLoaderRoute: typeof ParentDashboardRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/fees': {
+      id: '/parent/fees'
+      path: '/fees'
+      fullPath: '/parent/fees'
+      preLoaderRoute: typeof ParentFeesRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/grades': {
+      id: '/parent/grades'
+      path: '/grades'
+      fullPath: '/parent/grades'
+      preLoaderRoute: typeof ParentGradesRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/notifications': {
+      id: '/parent/notifications'
+      path: '/notifications'
+      fullPath: '/parent/notifications'
+      preLoaderRoute: typeof ParentNotificationsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/payment-history': {
+      id: '/parent/payment-history'
+      path: '/payment-history'
+      fullPath: '/parent/payment-history'
+      preLoaderRoute: typeof ParentPaymentHistoryRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/payments': {
+      id: '/parent/payments'
+      path: '/payments'
+      fullPath: '/parent/payments'
+      preLoaderRoute: typeof ParentPaymentsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/profile': {
+      id: '/parent/profile'
+      path: '/profile'
+      fullPath: '/parent/profile'
+      preLoaderRoute: typeof ParentProfileRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/report-cards': {
+      id: '/parent/report-cards'
+      path: '/report-cards'
+      fullPath: '/parent/report-cards'
+      preLoaderRoute: typeof ParentReportCardsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/schedule': {
+      id: '/parent/schedule'
+      path: '/schedule'
+      fullPath: '/parent/schedule'
+      preLoaderRoute: typeof ParentScheduleRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/settings': {
+      id: '/parent/settings'
+      path: '/settings'
+      fullPath: '/parent/settings'
+      preLoaderRoute: typeof ParentSettingsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/children/': {
+      id: '/parent/children/'
+      path: '/children'
+      fullPath: '/parent/children/'
+      preLoaderRoute: typeof ParentChildrenIndexRouteImport
       parentRoute: typeof ParentRouteRoute
     }
   }
@@ -607,11 +892,41 @@ const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
 )
 
 interface ParentRouteRouteChildren {
+  ParentAnnouncementsRoute: typeof ParentAnnouncementsRoute
+  ParentAttendanceRoute: typeof ParentAttendanceRoute
+  ParentBalanceRoute: typeof ParentBalanceRoute
+  ParentChildProfileRoute: typeof ParentChildProfileRoute
+  ParentClassRoute: typeof ParentClassRoute
   ParentDashboardRoute: typeof ParentDashboardRoute
+  ParentFeesRoute: typeof ParentFeesRoute
+  ParentGradesRoute: typeof ParentGradesRoute
+  ParentNotificationsRoute: typeof ParentNotificationsRoute
+  ParentPaymentHistoryRoute: typeof ParentPaymentHistoryRoute
+  ParentPaymentsRoute: typeof ParentPaymentsRoute
+  ParentProfileRoute: typeof ParentProfileRoute
+  ParentReportCardsRoute: typeof ParentReportCardsRoute
+  ParentScheduleRoute: typeof ParentScheduleRoute
+  ParentSettingsRoute: typeof ParentSettingsRoute
+  ParentChildrenIndexRoute: typeof ParentChildrenIndexRoute
 }
 
 const ParentRouteRouteChildren: ParentRouteRouteChildren = {
+  ParentAnnouncementsRoute: ParentAnnouncementsRoute,
+  ParentAttendanceRoute: ParentAttendanceRoute,
+  ParentBalanceRoute: ParentBalanceRoute,
+  ParentChildProfileRoute: ParentChildProfileRoute,
+  ParentClassRoute: ParentClassRoute,
   ParentDashboardRoute: ParentDashboardRoute,
+  ParentFeesRoute: ParentFeesRoute,
+  ParentGradesRoute: ParentGradesRoute,
+  ParentNotificationsRoute: ParentNotificationsRoute,
+  ParentPaymentHistoryRoute: ParentPaymentHistoryRoute,
+  ParentPaymentsRoute: ParentPaymentsRoute,
+  ParentProfileRoute: ParentProfileRoute,
+  ParentReportCardsRoute: ParentReportCardsRoute,
+  ParentScheduleRoute: ParentScheduleRoute,
+  ParentSettingsRoute: ParentSettingsRoute,
+  ParentChildrenIndexRoute: ParentChildrenIndexRoute,
 }
 
 const ParentRouteRouteWithChildren = ParentRouteRoute._addFileChildren(
