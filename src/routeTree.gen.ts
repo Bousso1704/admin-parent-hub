@@ -10,33 +10,544 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteRouteImport } from './routes/admin/route'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ParentRouteRouteImport } from './routes/parent/route'
+import { Route as AdminClassesRouteImport } from './routes/admin/classes'
+import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as AdminEvaluationsRouteImport } from './routes/admin/evaluations'
+import { Route as AdminExpensesRouteImport } from './routes/admin/expenses'
+import { Route as AdminLevelsRouteImport } from './routes/admin/levels'
+import { Route as AdminNotificationsRouteImport } from './routes/admin/notifications'
+import { Route as AdminParentsRouteImport } from './routes/admin/parents'
+import { Route as AdminPaymentRemindersRouteImport } from './routes/admin/payment-reminders'
+import { Route as AdminPaymentsRouteImport } from './routes/admin/payments'
+import { Route as AdminProfileRouteImport } from './routes/admin/profile'
+import { Route as AdminReportCardsRouteImport } from './routes/admin/report-cards'
+import { Route as AdminReportsRouteImport } from './routes/admin/reports'
+import { Route as AdminSalariesRouteImport } from './routes/admin/salaries'
+import { Route as AdminSchoolYearRouteImport } from './routes/admin/school-year'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminStaffRouteImport } from './routes/admin/staff'
+import { Route as AdminStatisticsRouteImport } from './routes/admin/statistics'
+import { Route as AdminStudentsRouteImport } from './routes/admin/students'
+import { Route as AdminSubjectsRouteImport } from './routes/admin/subjects'
+import { Route as AdminTeachersRouteImport } from './routes/admin/teachers'
+import { Route as AdminUnpaidStudentsRouteImport } from './routes/admin/unpaid-students'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as ParentAnnouncementsRouteImport } from './routes/parent/announcements'
+import { Route as ParentAttendanceRouteImport } from './routes/parent/attendance'
+import { Route as ParentBalanceRouteImport } from './routes/parent/balance'
+import { Route as ParentChildProfileRouteImport } from './routes/parent/child-profile'
+import { Route as ParentClassRouteImport } from './routes/parent/class'
+import { Route as ParentDashboardRouteImport } from './routes/parent/dashboard'
+import { Route as ParentFeesRouteImport } from './routes/parent/fees'
+import { Route as ParentGradesRouteImport } from './routes/parent/grades'
+import { Route as ParentNotificationsRouteImport } from './routes/parent/notifications'
+import { Route as ParentPaymentHistoryRouteImport } from './routes/parent/payment-history'
+import { Route as ParentPaymentsRouteImport } from './routes/parent/payments'
+import { Route as ParentProfileRouteImport } from './routes/parent/profile'
+import { Route as ParentReportCardsRouteImport } from './routes/parent/report-cards'
+import { Route as ParentScheduleRouteImport } from './routes/parent/schedule'
+import { Route as ParentSettingsRouteImport } from './routes/parent/settings'
+import { Route as ParentChildrenIndexRouteImport } from './routes/parent/children.index'
+import { Route as ParentChildrenIdRouteImport } from './routes/parent/children.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRouteRoute = AdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentRouteRoute = ParentRouteRouteImport.update({
+  id: '/parent',
+  path: '/parent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminClassesRoute = AdminClassesRouteImport.update({
+  id: '/classes',
+  path: '/classes',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminEvaluationsRoute = AdminEvaluationsRouteImport.update({
+  id: '/evaluations',
+  path: '/evaluations',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminExpensesRoute = AdminExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminLevelsRoute = AdminLevelsRouteImport.update({
+  id: '/levels',
+  path: '/levels',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminParentsRoute = AdminParentsRouteImport.update({
+  id: '/parents',
+  path: '/parents',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminPaymentRemindersRoute = AdminPaymentRemindersRouteImport.update({
+  id: '/payment-reminders',
+  path: '/payment-reminders',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminProfileRoute = AdminProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminReportCardsRoute = AdminReportCardsRouteImport.update({
+  id: '/report-cards',
+  path: '/report-cards',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSalariesRoute = AdminSalariesRouteImport.update({
+  id: '/salaries',
+  path: '/salaries',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSchoolYearRoute = AdminSchoolYearRouteImport.update({
+  id: '/school-year',
+  path: '/school-year',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStaffRoute = AdminStaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStatisticsRoute = AdminStatisticsRouteImport.update({
+  id: '/statistics',
+  path: '/statistics',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminStudentsRoute = AdminStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminSubjectsRoute = AdminSubjectsRouteImport.update({
+  id: '/subjects',
+  path: '/subjects',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminTeachersRoute = AdminTeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUnpaidStudentsRoute = AdminUnpaidStudentsRouteImport.update({
+  id: '/unpaid-students',
+  path: '/unpaid-students',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const ParentAnnouncementsRoute = ParentAnnouncementsRouteImport.update({
+  id: '/announcements',
+  path: '/announcements',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentAttendanceRoute = ParentAttendanceRouteImport.update({
+  id: '/attendance',
+  path: '/attendance',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentBalanceRoute = ParentBalanceRouteImport.update({
+  id: '/balance',
+  path: '/balance',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentChildProfileRoute = ParentChildProfileRouteImport.update({
+  id: '/child-profile',
+  path: '/child-profile',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentClassRoute = ParentClassRouteImport.update({
+  id: '/class',
+  path: '/class',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentDashboardRoute = ParentDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentFeesRoute = ParentFeesRouteImport.update({
+  id: '/fees',
+  path: '/fees',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentGradesRoute = ParentGradesRouteImport.update({
+  id: '/grades',
+  path: '/grades',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentNotificationsRoute = ParentNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentPaymentHistoryRoute = ParentPaymentHistoryRouteImport.update({
+  id: '/payment-history',
+  path: '/payment-history',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentPaymentsRoute = ParentPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentProfileRoute = ParentProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentReportCardsRoute = ParentReportCardsRouteImport.update({
+  id: '/report-cards',
+  path: '/report-cards',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentScheduleRoute = ParentScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentSettingsRoute = ParentSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentChildrenIndexRoute = ParentChildrenIndexRouteImport.update({
+  id: '/children/',
+  path: '/children/',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
+const ParentChildrenIdRoute = ParentChildrenIdRouteImport.update({
+  id: '/children/$id',
+  path: '/children/$id',
+  getParentRoute: () => ParentRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/parent': typeof ParentRouteRouteWithChildren
+  '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/parent': typeof ParentRouteRouteWithChildren
+  '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/parent/children': typeof ParentChildrenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/parent': typeof ParentRouteRouteWithChildren
+  '/login': typeof LoginRoute
+  '/admin/classes': typeof AdminClassesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/evaluations': typeof AdminEvaluationsRoute
+  '/admin/expenses': typeof AdminExpensesRoute
+  '/admin/levels': typeof AdminLevelsRoute
+  '/admin/notifications': typeof AdminNotificationsRoute
+  '/admin/parents': typeof AdminParentsRoute
+  '/admin/payment-reminders': typeof AdminPaymentRemindersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/report-cards': typeof AdminReportCardsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/salaries': typeof AdminSalariesRoute
+  '/admin/school-year': typeof AdminSchoolYearRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/staff': typeof AdminStaffRoute
+  '/admin/statistics': typeof AdminStatisticsRoute
+  '/admin/students': typeof AdminStudentsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/teachers': typeof AdminTeachersRoute
+  '/admin/unpaid-students': typeof AdminUnpaidStudentsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/parent/announcements': typeof ParentAnnouncementsRoute
+  '/parent/attendance': typeof ParentAttendanceRoute
+  '/parent/balance': typeof ParentBalanceRoute
+  '/parent/child-profile': typeof ParentChildProfileRoute
+  '/parent/class': typeof ParentClassRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/fees': typeof ParentFeesRoute
+  '/parent/grades': typeof ParentGradesRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/payment-history': typeof ParentPaymentHistoryRoute
+  '/parent/payments': typeof ParentPaymentsRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/report-cards': typeof ParentReportCardsRoute
+  '/parent/schedule': typeof ParentScheduleRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/notifications'
+    | '/admin/parents'
+    | '/admin/payment-reminders'
+    | '/admin/payments'
+    | '/admin/profile'
+    | '/admin/report-cards'
+    | '/admin/reports'
+    | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
+    | '/admin/staff'
+    | '/admin/statistics'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
+    | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children/$id'
+    | '/parent/children/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/notifications'
+    | '/admin/parents'
+    | '/admin/payment-reminders'
+    | '/admin/payments'
+    | '/admin/profile'
+    | '/admin/report-cards'
+    | '/admin/reports'
+    | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
+    | '/admin/staff'
+    | '/admin/statistics'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
+    | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children/$id'
+    | '/parent/children'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/parent'
+    | '/login'
+    | '/admin/classes'
+    | '/admin/dashboard'
+    | '/admin/evaluations'
+    | '/admin/expenses'
+    | '/admin/levels'
+    | '/admin/notifications'
+    | '/admin/parents'
+    | '/admin/payment-reminders'
+    | '/admin/payments'
+    | '/admin/profile'
+    | '/admin/report-cards'
+    | '/admin/reports'
+    | '/admin/salaries'
+    | '/admin/school-year'
+    | '/admin/settings'
+    | '/admin/staff'
+    | '/admin/statistics'
+    | '/admin/students'
+    | '/admin/subjects'
+    | '/admin/teachers'
+    | '/admin/unpaid-students'
+    | '/admin/users'
+    | '/parent/announcements'
+    | '/parent/attendance'
+    | '/parent/balance'
+    | '/parent/child-profile'
+    | '/parent/class'
+    | '/parent/dashboard'
+    | '/parent/fees'
+    | '/parent/grades'
+    | '/parent/notifications'
+    | '/parent/payment-history'
+    | '/parent/payments'
+    | '/parent/profile'
+    | '/parent/report-cards'
+    | '/parent/schedule'
+    | '/parent/settings'
+    | '/parent/children/$id'
+    | '/parent/children/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRouteRoute: typeof AdminRouteRouteWithChildren
+  ParentRouteRoute: typeof ParentRouteRouteWithChildren
+  LoginRoute: typeof LoginRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +559,406 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent': {
+      id: '/parent'
+      path: '/parent'
+      fullPath: '/parent'
+      preLoaderRoute: typeof ParentRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/classes': {
+      id: '/admin/classes'
+      path: '/classes'
+      fullPath: '/admin/classes'
+      preLoaderRoute: typeof AdminClassesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/evaluations': {
+      id: '/admin/evaluations'
+      path: '/evaluations'
+      fullPath: '/admin/evaluations'
+      preLoaderRoute: typeof AdminEvaluationsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/expenses': {
+      id: '/admin/expenses'
+      path: '/expenses'
+      fullPath: '/admin/expenses'
+      preLoaderRoute: typeof AdminExpensesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/levels': {
+      id: '/admin/levels'
+      path: '/levels'
+      fullPath: '/admin/levels'
+      preLoaderRoute: typeof AdminLevelsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/notifications': {
+      id: '/admin/notifications'
+      path: '/notifications'
+      fullPath: '/admin/notifications'
+      preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/parents': {
+      id: '/admin/parents'
+      path: '/parents'
+      fullPath: '/admin/parents'
+      preLoaderRoute: typeof AdminParentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/payment-reminders': {
+      id: '/admin/payment-reminders'
+      path: '/payment-reminders'
+      fullPath: '/admin/payment-reminders'
+      preLoaderRoute: typeof AdminPaymentRemindersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/profile': {
+      id: '/admin/profile'
+      path: '/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AdminProfileRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/report-cards': {
+      id: '/admin/report-cards'
+      path: '/report-cards'
+      fullPath: '/admin/report-cards'
+      preLoaderRoute: typeof AdminReportCardsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/salaries': {
+      id: '/admin/salaries'
+      path: '/salaries'
+      fullPath: '/admin/salaries'
+      preLoaderRoute: typeof AdminSalariesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/school-year': {
+      id: '/admin/school-year'
+      path: '/school-year'
+      fullPath: '/admin/school-year'
+      preLoaderRoute: typeof AdminSchoolYearRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/staff': {
+      id: '/admin/staff'
+      path: '/staff'
+      fullPath: '/admin/staff'
+      preLoaderRoute: typeof AdminStaffRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/statistics': {
+      id: '/admin/statistics'
+      path: '/statistics'
+      fullPath: '/admin/statistics'
+      preLoaderRoute: typeof AdminStatisticsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/students': {
+      id: '/admin/students'
+      path: '/students'
+      fullPath: '/admin/students'
+      preLoaderRoute: typeof AdminStudentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/subjects': {
+      id: '/admin/subjects'
+      path: '/subjects'
+      fullPath: '/admin/subjects'
+      preLoaderRoute: typeof AdminSubjectsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/teachers': {
+      id: '/admin/teachers'
+      path: '/teachers'
+      fullPath: '/admin/teachers'
+      preLoaderRoute: typeof AdminTeachersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/unpaid-students': {
+      id: '/admin/unpaid-students'
+      path: '/unpaid-students'
+      fullPath: '/admin/unpaid-students'
+      preLoaderRoute: typeof AdminUnpaidStudentsRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/parent/announcements': {
+      id: '/parent/announcements'
+      path: '/announcements'
+      fullPath: '/parent/announcements'
+      preLoaderRoute: typeof ParentAnnouncementsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/attendance': {
+      id: '/parent/attendance'
+      path: '/attendance'
+      fullPath: '/parent/attendance'
+      preLoaderRoute: typeof ParentAttendanceRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/balance': {
+      id: '/parent/balance'
+      path: '/balance'
+      fullPath: '/parent/balance'
+      preLoaderRoute: typeof ParentBalanceRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/child-profile': {
+      id: '/parent/child-profile'
+      path: '/child-profile'
+      fullPath: '/parent/child-profile'
+      preLoaderRoute: typeof ParentChildProfileRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/class': {
+      id: '/parent/class'
+      path: '/class'
+      fullPath: '/parent/class'
+      preLoaderRoute: typeof ParentClassRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/dashboard': {
+      id: '/parent/dashboard'
+      path: '/dashboard'
+      fullPath: '/parent/dashboard'
+      preLoaderRoute: typeof ParentDashboardRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/fees': {
+      id: '/parent/fees'
+      path: '/fees'
+      fullPath: '/parent/fees'
+      preLoaderRoute: typeof ParentFeesRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/grades': {
+      id: '/parent/grades'
+      path: '/grades'
+      fullPath: '/parent/grades'
+      preLoaderRoute: typeof ParentGradesRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/notifications': {
+      id: '/parent/notifications'
+      path: '/notifications'
+      fullPath: '/parent/notifications'
+      preLoaderRoute: typeof ParentNotificationsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/payment-history': {
+      id: '/parent/payment-history'
+      path: '/payment-history'
+      fullPath: '/parent/payment-history'
+      preLoaderRoute: typeof ParentPaymentHistoryRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/payments': {
+      id: '/parent/payments'
+      path: '/payments'
+      fullPath: '/parent/payments'
+      preLoaderRoute: typeof ParentPaymentsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/profile': {
+      id: '/parent/profile'
+      path: '/profile'
+      fullPath: '/parent/profile'
+      preLoaderRoute: typeof ParentProfileRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/report-cards': {
+      id: '/parent/report-cards'
+      path: '/report-cards'
+      fullPath: '/parent/report-cards'
+      preLoaderRoute: typeof ParentReportCardsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/schedule': {
+      id: '/parent/schedule'
+      path: '/schedule'
+      fullPath: '/parent/schedule'
+      preLoaderRoute: typeof ParentScheduleRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/settings': {
+      id: '/parent/settings'
+      path: '/settings'
+      fullPath: '/parent/settings'
+      preLoaderRoute: typeof ParentSettingsRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/children/': {
+      id: '/parent/children/'
+      path: '/children'
+      fullPath: '/parent/children/'
+      preLoaderRoute: typeof ParentChildrenIndexRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
+    '/parent/children/$id': {
+      id: '/parent/children/$id'
+      path: '/children/$id'
+      fullPath: '/parent/children/$id'
+      preLoaderRoute: typeof ParentChildrenIdRouteImport
+      parentRoute: typeof ParentRouteRoute
+    }
   }
 }
 
+interface AdminRouteRouteChildren {
+  AdminClassesRoute: typeof AdminClassesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminEvaluationsRoute: typeof AdminEvaluationsRoute
+  AdminExpensesRoute: typeof AdminExpensesRoute
+  AdminLevelsRoute: typeof AdminLevelsRoute
+  AdminNotificationsRoute: typeof AdminNotificationsRoute
+  AdminParentsRoute: typeof AdminParentsRoute
+  AdminPaymentRemindersRoute: typeof AdminPaymentRemindersRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminProfileRoute: typeof AdminProfileRoute
+  AdminReportCardsRoute: typeof AdminReportCardsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSalariesRoute: typeof AdminSalariesRoute
+  AdminSchoolYearRoute: typeof AdminSchoolYearRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminStaffRoute: typeof AdminStaffRoute
+  AdminStatisticsRoute: typeof AdminStatisticsRoute
+  AdminStudentsRoute: typeof AdminStudentsRoute
+  AdminSubjectsRoute: typeof AdminSubjectsRoute
+  AdminTeachersRoute: typeof AdminTeachersRoute
+  AdminUnpaidStudentsRoute: typeof AdminUnpaidStudentsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+}
+
+const AdminRouteRouteChildren: AdminRouteRouteChildren = {
+  AdminClassesRoute: AdminClassesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminEvaluationsRoute: AdminEvaluationsRoute,
+  AdminExpensesRoute: AdminExpensesRoute,
+  AdminLevelsRoute: AdminLevelsRoute,
+  AdminNotificationsRoute: AdminNotificationsRoute,
+  AdminParentsRoute: AdminParentsRoute,
+  AdminPaymentRemindersRoute: AdminPaymentRemindersRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminProfileRoute: AdminProfileRoute,
+  AdminReportCardsRoute: AdminReportCardsRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSalariesRoute: AdminSalariesRoute,
+  AdminSchoolYearRoute: AdminSchoolYearRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminStaffRoute: AdminStaffRoute,
+  AdminStatisticsRoute: AdminStatisticsRoute,
+  AdminStudentsRoute: AdminStudentsRoute,
+  AdminSubjectsRoute: AdminSubjectsRoute,
+  AdminTeachersRoute: AdminTeachersRoute,
+  AdminUnpaidStudentsRoute: AdminUnpaidStudentsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+}
+
+const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
+  AdminRouteRouteChildren,
+)
+
+interface ParentRouteRouteChildren {
+  ParentAnnouncementsRoute: typeof ParentAnnouncementsRoute
+  ParentAttendanceRoute: typeof ParentAttendanceRoute
+  ParentBalanceRoute: typeof ParentBalanceRoute
+  ParentChildProfileRoute: typeof ParentChildProfileRoute
+  ParentClassRoute: typeof ParentClassRoute
+  ParentDashboardRoute: typeof ParentDashboardRoute
+  ParentFeesRoute: typeof ParentFeesRoute
+  ParentGradesRoute: typeof ParentGradesRoute
+  ParentNotificationsRoute: typeof ParentNotificationsRoute
+  ParentPaymentHistoryRoute: typeof ParentPaymentHistoryRoute
+  ParentPaymentsRoute: typeof ParentPaymentsRoute
+  ParentProfileRoute: typeof ParentProfileRoute
+  ParentReportCardsRoute: typeof ParentReportCardsRoute
+  ParentScheduleRoute: typeof ParentScheduleRoute
+  ParentSettingsRoute: typeof ParentSettingsRoute
+  ParentChildrenIdRoute: typeof ParentChildrenIdRoute
+  ParentChildrenIndexRoute: typeof ParentChildrenIndexRoute
+}
+
+const ParentRouteRouteChildren: ParentRouteRouteChildren = {
+  ParentAnnouncementsRoute: ParentAnnouncementsRoute,
+  ParentAttendanceRoute: ParentAttendanceRoute,
+  ParentBalanceRoute: ParentBalanceRoute,
+  ParentChildProfileRoute: ParentChildProfileRoute,
+  ParentClassRoute: ParentClassRoute,
+  ParentDashboardRoute: ParentDashboardRoute,
+  ParentFeesRoute: ParentFeesRoute,
+  ParentGradesRoute: ParentGradesRoute,
+  ParentNotificationsRoute: ParentNotificationsRoute,
+  ParentPaymentHistoryRoute: ParentPaymentHistoryRoute,
+  ParentPaymentsRoute: ParentPaymentsRoute,
+  ParentProfileRoute: ParentProfileRoute,
+  ParentReportCardsRoute: ParentReportCardsRoute,
+  ParentScheduleRoute: ParentScheduleRoute,
+  ParentSettingsRoute: ParentSettingsRoute,
+  ParentChildrenIdRoute: ParentChildrenIdRoute,
+  ParentChildrenIndexRoute: ParentChildrenIndexRoute,
+}
+
+const ParentRouteRouteWithChildren = ParentRouteRoute._addFileChildren(
+  ParentRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRouteRoute: AdminRouteRouteWithChildren,
+  ParentRouteRoute: ParentRouteRouteWithChildren,
+  LoginRoute: LoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
