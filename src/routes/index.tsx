@@ -3,6 +3,7 @@ import {
   ArrowRight,
   BookOpen,
   CalendarDays,
+  ClipboardList,
   GraduationCap,
   Heart,
   Landmark,
